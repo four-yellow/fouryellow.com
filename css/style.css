@@ -12,6 +12,7 @@
 body {
     background: var(--pink);
     transition: background 1s ease-in-out;
+    font-family: 'Recursive', monospace;
 }
 
 body.home {
