@@ -45,6 +45,19 @@ main .big4 {
     top: -20vh;
     left: -10vw;
     z-index: -100;
+    transition: all 1s ease-in-out;
+}
+body.about .big4 {
+    transform: translateX(-50%);
+}
+body.blog .big4 {
+    transform: translateX(90%);
+}
+body.stuff .big4 {
+    transform: translateY(50%);
+}
+body.portfolio .big4 {
+    transform: translateY(-70%);
 }
 
 main .logo {
