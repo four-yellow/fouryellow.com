@@ -9,14 +9,25 @@
     --rainbow: linear-gradient(90deg, #E04040 0%, #FFAF14 11.46%, #D2FF1C 22.56%, #6DF73D 33.81%, #00FF85 45.47%, #1BF2F2 56.25%, #1358DD 65.1%, #9D1CCA 75.52%, #D61AA1 82.81%, #D1173E 91.67%, #E63A3A 100%);
 }
 
-html {
+body {
     background: var(--pink);
     transition: background 1s ease-in-out;
 }
 
-body {
-    background: url('../images/4pattern.png');
-    background-size: 4em;
+body.home {
+    background: var(--pink);
+}
+body.about {
+    background: var(--purple);
+}
+body.blog {
+    background: var(--blue);
+}
+body.portfolio {
+    background: var(--green);
+}
+body.stuff {
+    background: var(--orange);
 }
 
 main {
@@ -25,6 +36,8 @@ main {
     height: 100vh;
     overflow: hidden;
     z-index: 1;
+    background: url('../images/4pattern.png');
+    background-size: 4em;
 }
 
 main .big4 {
