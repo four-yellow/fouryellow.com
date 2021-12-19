@@ -252,7 +252,7 @@ div.back-blog a {
     text-decoration: none;
 }
 
-body.blog :is(div.back-blog) {
+body.blog :is(section#blog, div.back-blog) {
     transform: translateX(0vw);
 }
 
@@ -320,4 +320,66 @@ div.back-portfolio a {
 
 body.portfolio :is(div.back-portfolio) {
     transform: translateY(0vw) rotate(90deg);
+}
+
+section#blog {
+    position: fixed;
+    right: 20vw;
+    top: 15vh;
+    bottom: 10vh;
+    background: white;
+    font-size: 80px;
+    font-weight: 900;
+    width: 10em;
+    line-height: 60px;
+    transition: transform 1s ease-in-out;
+    transform: translateX(-100vw);
+}
+
+section#blog ol {
+    position: absolute;
+    font-size: 40px;
+    left: -9em;
+    top: -1em;
+    list-style: none;
+    right: -2em;
+    margin: 0;
+}
+
+section#blog li {
+    display: flex;
+    margin: 1em 0;
+}
+
+section#blog li span {
+    margin-top: 20px;
+    background: var(--yellow);
+    height: 1.5em;
+}
+
+section#blog li h2 {
+    margin: 0;
+    font-size: 80px;
+    line-height: 1em;
+}
+
+section#blog a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+section#blog a:hover::before {
+    content: " ";
+    position: absolute;
+    left: -.2em;
+    right: 0;
+    bottom: -.2em;
+    top: .2em;
+    z-index: -1;
+    background: var(--yellow);
+}
+
+section#blog p{
+    margin-top: 0;
 }
