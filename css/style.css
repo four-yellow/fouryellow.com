@@ -105,8 +105,8 @@ main nav {
     position: absolute;
     font-size: 50px;
     line-height: 60px;
-    right: 6em;
-    top: 4em;
+    right: 15vw;
+    top: 20vh;
     margin: 0;
     padding-right: 1em;
     transition: transform 1s ease-in-out;
@@ -170,10 +170,10 @@ section#about {
 }
 
 section#about img {
-    position:absolute;
-    width: 20vw;
+    position: absolute;
+    width: 6em;
     height: auto;
-    left: -47%;
+    left: -5em;
     top: 5em;
 }
 
