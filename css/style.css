@@ -222,3 +222,102 @@ div.back-about a {
 body.about :is(section#about, div.back-about) {
     transform: translateX(0vw);
 }
+
+div.back-blog {
+    position: fixed;
+    font-size: 120px;
+    font-weight: 900;
+    bottom: 0;
+    right: 0.2em;
+    transition: transform 1s ease-in-out;
+    transform: translateX(-100vw);
+}
+
+div.back-blog::before {
+    content: " ";
+    position: absolute;
+    left: -0.2em;
+    bottom: 0.2em;
+    top: 0.6em;
+    right: 0.2em;
+    background: white;
+    z-index: -1;
+}
+div.back-blog:hover::before {
+    background: var(--yellow);
+}
+
+div.back-blog a {
+    color: black;
+    text-decoration: none;
+}
+
+body.blog :is(div.back-blog) {
+    transform: translateX(0vw);
+}
+
+div.back-stuff {
+    position: fixed;
+    font-size: 120px;
+    font-weight: 900;
+    bottom: .8em;
+    right: 0em;
+    transition: transform 1s ease-in-out;
+    transform: translateY(-100vw) rotate(-90deg);
+}
+
+div.back-stuff::before {
+    content: " ";
+    position: absolute;
+    left: -0.2em;
+    bottom: 0.5em;
+    top: 0.3em;
+    right: 0.2em;
+    background: white;
+    z-index: -1;
+}
+div.back-stuff:hover::before {
+    background: var(--yellow);
+}
+
+div.back-stuff a {
+    color: black;
+    text-decoration: none;
+}
+
+body.stuff :is(div.back-stuff) {
+    transform: translateY(0vw) rotate(-90deg);
+}
+
+div.back-portfolio {
+    position: fixed;
+    font-size: 120px;
+    font-weight: 900;
+    bottom: 0.6em;
+    right: -.2em;
+    transition: transform 1s ease-in-out;
+    transform: translateY(100vw) rotate(90deg);
+}
+
+div.back-portfolio::before {
+    content: " ";
+    position: absolute;
+    left: .3em;
+    bottom: 0.2em;
+    top: 0.6em;
+    right: -.1em;
+    background: white;
+    z-index: -1;
+}
+div.back-portfolio:hover::before {
+    background: var(--yellow);
+}
+
+div.back-portfolio a {
+    color: black;
+    text-decoration: none;
+}
+
+body.portfolio :is(div.back-portfolio) {
+    transform: translateY(0vw) rotate(90deg);
+}
