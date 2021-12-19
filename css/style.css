@@ -157,23 +157,47 @@ body.portfolio :where(.logo, nav) {
 
 section#about {
     position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 50px;
+    line-height: 60px;
+    transition: transform 1s ease-in-out;
+    transform: translateX(100vw);
+    overflow: auto;
+}
+
+section#about > div {
+    position: absolute;
     left: 40vw;
     top: 15vh;
-    background: white;
     font-size: 50px;
     width: 12em;
     padding-left: 1.5em;
     line-height: 60px;
     padding-top: 14px;
-    transition: transform 1s ease-in-out;
-    transform: translateX(100vw);
+    padding-bottom: 10vh;
+}
+
+section#about::after {
+    content: " ";
+    position: sticky;
+    left: 40vw;
+    top: 15vh;
+    height: 75vh;
+    background: white;
+    font-size: 50px;
+    width: 12em;
+    display: block;
+    z-index: -1;
 }
 
 section#about img {
     position: absolute;
     width: 6em;
     height: auto;
-    left: -5em;
+    left: calc(40vw - 5em);
     top: 5em;
 }
 
