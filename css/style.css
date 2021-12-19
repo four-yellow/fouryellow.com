@@ -13,6 +13,9 @@ body {
     background: var(--pink);
     transition: background 1s ease-in-out;
     font-family: 'Recursive', monospace;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 }
 
 body.home {
@@ -43,22 +46,29 @@ main {
 
 main .big4 {
     position: absolute;
-    top: -20vh;
-    left: -10vw;
-    z-index: -100;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../images/big4.svg');
+    background-repeat: no-repeat;
+    background-position-x: -10vw;
+    background-position-y: -20vh;
+    opacity: 1;
+    z-index: -1;
     transition: all 1s ease-in-out;
 }
 body.about .big4 {
-    transform: translateX(-50%);
+    background-position-x: -55vw;
 }
 body.blog .big4 {
-    transform: translateX(90%);
+    background-position-x: 60vw;
 }
 body.stuff .big4 {
-    transform: translateY(50%);
+    background-position-y: 50%;
 }
 body.portfolio .big4 {
-    transform: translateY(-70%);
+    background-position-y: -70%;
 }
 
 main .logo {
@@ -69,6 +79,7 @@ main .logo {
     font-weight: 900;
     line-height: 1em;
     margin: 0;
+    transition: transform 1s ease-in-out;
 }
 
 main .logo a {
@@ -98,6 +109,7 @@ main nav {
     top: 4em;
     margin: 0;
     padding-right: 1em;
+    transition: transform 1s ease-in-out;
 }
 
 main nav::before{
@@ -128,4 +140,85 @@ main nav a:hover::before {
     top: .2em;
     z-index: -1;
     background: var(--yellow);
+}
+
+body.about :where(.logo, nav) {
+    transform: translateX(-100vw);
+}
+body.blog :where(.logo, nav) {
+    transform: translateX(100vw);
+}
+body.stuff :where(.logo, nav) {
+    transform: translateY(100vh);
+}
+body.portfolio :where(.logo, nav) {
+    transform: translateY(-100vh);
+}
+
+section#about {
+    position: fixed;
+    right: 20vw;
+    top: 15vh;
+    background: white;
+    font-size: 50px;
+    width: 12em;
+    padding-left: 1.5em;
+    line-height: 60px;
+    padding-top: 14px;
+    transition: transform 1s ease-in-out;
+    transform: translateX(100vw);
+}
+
+section#about img {
+    position:absolute;
+    width: 20vw;
+    height: auto;
+    left: -47%;
+    top: 5em;
+}
+
+section#about a {
+    text-decoration: none;
+    background: var(--rainbow);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    white-space: nowrap;
+}
+
+section#about p{
+    margin-top: 0;
+}
+
+div.back-about {
+    position: fixed;
+    font-size: 120px;
+    font-weight: 900;
+    bottom: 0;
+    right: 0.2em;
+    transition: transform 1s ease-in-out;
+    transform: translateX(100vw);
+}
+
+div.back-about::before {
+    content: " ";
+    position: absolute;
+    left: -0.2em;
+    bottom: 0.2em;
+    top: 0.6em;
+    right: 0.2em;
+    background: white;
+    z-index: -1;
+}
+div.back-about:hover::before {
+    background: var(--yellow);
+}
+
+div.back-about a {
+    color: black;
+    text-decoration: none;
+}
+
+body.about :is(section#about, div.back-about) {
+    transform: translateX(0vw);
 }
