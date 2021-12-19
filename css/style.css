@@ -65,10 +65,10 @@ body.blog .big4 {
     background-position-x: 60vw;
 }
 body.stuff .big4 {
-    background-position-y: 50%;
+    background-position-y: -70%;
 }
 body.portfolio .big4 {
-    background-position-y: -70%;
+    background-position-y: 160%;
 }
 
 main .logo {
