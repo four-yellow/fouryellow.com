@@ -75,7 +75,7 @@ main .logo {
     position: absolute;
     bottom: .3em;
     right: 0;
-    font-size: 144px;
+    font-size: max(10vw, 80px);
     font-weight: 900;
     line-height: 1em;
     margin: 0;
@@ -103,8 +103,8 @@ main .logo:hover::before {
 
 main nav {
     position: absolute;
-    font-size: 50px;
-    line-height: 60px;
+    font-size: max(3.5vw, 32px);
+    line-height: 1.2em;
     right: 15vw;
     top: 20vh;
     margin: 0;
@@ -157,7 +157,7 @@ body.portfolio :where(.logo, nav) {
 
 section#about {
     position: fixed;
-    right: 20vw;
+    left: 40vw;
     top: 15vh;
     background: white;
     font-size: 50px;
@@ -263,7 +263,7 @@ div.back-stuff {
     bottom: .8em;
     right: 0em;
     transition: transform 1s ease-in-out;
-    transform: translateY(-100vw) rotate(-90deg);
+    transform: translateY(-100vh) rotate(-90deg);
 }
 
 div.back-stuff::before {
@@ -296,7 +296,7 @@ div.back-portfolio {
     bottom: 0.6em;
     right: -.2em;
     transition: transform 1s ease-in-out;
-    transform: translateY(100vw) rotate(90deg);
+    transform: translateY(100vh) rotate(90deg);
 }
 
 div.back-portfolio::before {
