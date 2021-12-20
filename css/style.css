@@ -180,12 +180,12 @@ section#about > div {
     padding-bottom: 10vh;
 }
 
-section#about::after {
+section#about > div::after {
     content: " ";
-    position: sticky;
-    left: 40vw;
-    top: 15vh;
-    height: 75vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 10vh;
     background: white;
     font-size: 50px;
     width: 12em;
@@ -348,25 +348,51 @@ body.portfolio :is(div.back-portfolio) {
 
 section#blog {
     position: fixed;
-    right: 20vw;
-    top: 15vh;
-    bottom: 10vh;
-    background: white;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
     font-size: 80px;
     font-weight: 900;
-    width: 10em;
     line-height: 60px;
     transition: transform 1s ease-in-out;
     transform: translateX(-100vw);
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */  
 }
 
-section#blog ol {
+section#blog::-webkit-scrollbar {
+    display: none;
+}
+
+section#blog > div {
     position: absolute;
+    right: 17vw;
+    left: 10vw;
+    top: 10vh;
+    font-size: 80px;
+    padding-bottom: 10vh;
+    min-height: 85vh;
+}
+
+section#blog > div::after {
+    content: " ";
+    position: absolute;
+    left: 4.5em;
+    top: .5em;
+    right: .5em;
+    bottom: 10vh;
+    background: white;
+    display: block;
+    z-index: -1;
+}
+
+
+
+section#blog ol {
     font-size: 40px;
-    left: -9em;
-    top: -1em;
     list-style: none;
-    right: -2em;
     margin: 0;
 }
 
@@ -391,6 +417,7 @@ section#blog a {
     text-decoration: none;
     color: black;
     position: relative;
+    z-index: 1;
 }
 
 section#blog a:hover::before {
