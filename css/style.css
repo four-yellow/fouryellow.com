@@ -24,7 +24,7 @@ body.home {
 body.about {
     background: var(--purple);
 }
-body.blog {
+body.blog, body.blog-post {
     background: var(--blue);
 }
 body.portfolio {
@@ -63,6 +63,9 @@ body.about .big4 {
 }
 body.blog .big4 {
     background-position-x: 60vw;
+}
+body.blog-post .big4 {
+    background-position-x: 100vw;
 }
 body.stuff .big4 {
     background-position-y: -70%;
@@ -145,7 +148,7 @@ main nav a:hover::before {
 body.about :where(.logo, nav) {
     transform: translateX(-100vw);
 }
-body.blog :where(.logo, nav) {
+body.blog :where(.logo, nav), body.blog-post :where(.logo, nav) {
     transform: translateX(100vw);
 }
 body.stuff :where(.logo, nav) {
@@ -300,6 +303,7 @@ div.back-stuff::before {
     background: white;
     z-index: -1;
 }
+
 div.back-stuff:hover::before {
     background: var(--yellow);
 }
@@ -333,6 +337,7 @@ div.back-portfolio::before {
     background: white;
     z-index: -1;
 }
+
 div.back-portfolio:hover::before {
     background: var(--yellow);
 }
@@ -388,8 +393,6 @@ section#blog > div::after {
     z-index: -1;
 }
 
-
-
 section#blog ol {
     font-size: 40px;
     list-style: none;
@@ -433,4 +436,83 @@ section#blog a:hover::before {
 
 section#blog p{
     margin-top: 0;
+}
+
+div.back-blog-post {
+    position: fixed;
+    font-size: 120px;
+    font-weight: 900;
+    bottom: 0;
+    right: 0.2em;
+    transition: transform 1s ease-in-out;
+    transform: translateX(-100vw);
+}
+
+div.back-blog-post::before {
+    content: " ";
+    position: absolute;
+    left: -0.2em;
+    bottom: 0.2em;
+    top: 0.6em;
+    right: 0.2em;
+    background: white;
+    z-index: -1;
+}
+div.back-blog-post:hover::before {
+    background: var(--yellow);
+}
+
+div.back-blog-post a {
+    color: black;
+    text-decoration: none;
+}
+
+body.blog-post :is(section#blog-post, div.back-blog-post) {
+    transform: translateX(0vw);
+}
+
+body.blog-post :is(section#blog, div.back-blog) {
+    transform: translateX(100vw);
+}
+
+section#blog-post {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 60px;
+    transition: transform 1s ease-in-out;
+    transform: translateX(-100vw);
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */  
+}
+
+section#blog-post::-webkit-scrollbar {
+    display: none;
+}
+
+section#blog-post > div {
+    position: absolute;
+    right: 17vw;
+    left: 10vw;
+    top: 10vh;
+    font-size: 80px;
+    padding-bottom: 10vh;
+    min-height: 85vh;
+}
+
+section#blog-post > div::after {
+    content: " ";
+    position: absolute;
+    left: 4.5em;
+    top: .5em;
+    right: .5em;
+    bottom: 10vh;
+    background: white;
+    display: block;
+    z-index: -1;
 }
