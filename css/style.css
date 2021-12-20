@@ -501,8 +501,7 @@ section#blog-post > div {
     left: 10vw;
     top: 10vh;
     font-size: 80px;
-    padding-bottom: 10vh;
-    min-height: 85vh;
+    padding-bottom: 12vh;
 }
 
 section#blog-post > div::after {
@@ -515,4 +514,31 @@ section#blog-post > div::after {
     background: white;
     display: block;
     z-index: -1;
+}
+
+section#blog-post header {
+    display: flex;
+    margin: .5em 0;
+}
+
+section#blog-post header span {
+    margin-top: 20px;
+    font-size: 40px;
+    background: var(--yellow);
+    height: 1.5em;
+    margin-left: 1em;
+}
+
+section#blog-post header h1 {
+    margin: 0;
+    font-size: 80px;
+    line-height: 1em;
+}
+
+section#blog-post p {
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 17em;
+    line-height: 1.5em;
+    margin-right: 2em;
 }
