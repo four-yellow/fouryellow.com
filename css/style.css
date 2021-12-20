@@ -18,6 +18,10 @@ body {
     width: 100vw;
 }
 
+body.initial, body.initial * {
+    transition: none !important;
+}
+
 body.home {
     background: var(--pink);
 }
