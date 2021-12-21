@@ -7,6 +7,7 @@
     --orange: #FF7B52;
     --blue: #6BDCFF;
     --rainbow: linear-gradient(90deg, #E04040 0%, #FFAF14 11.46%, #D2FF1C 22.56%, #6DF73D 33.81%, #00FF85 45.47%, #1BF2F2 56.25%, #1358DD 65.1%, #9D1CCA 75.52%, #D61AA1 82.81%, #D1173E 91.67%, #E63A3A 100%);
+    --shadow: 5px 5px 0px #00000052;
 }
 
 body {
@@ -103,6 +104,7 @@ main .logo::before {
     right: .2em;
     background: white;
     z-index: -1;
+    box-shadow: var(--shadow);
 }
 main .logo:hover::before {
     background: var(--yellow);
@@ -128,6 +130,7 @@ main nav::before{
     left: .3em;
     background: white;
     z-index: -1;
+    box-shadow: var(--shadow);
 }
 main nav a{
     text-decoration: none;
@@ -198,6 +201,7 @@ section#about > div::after {
     width: 12em;
     display: block;
     z-index: -1;
+    box-shadow: var(--shadow);
 }
 
 section#about img {
@@ -206,6 +210,7 @@ section#about img {
     height: auto;
     left: calc(40vw - 5em);
     top: 5em;
+    box-shadow: var(--shadow);
 }
 
 section#about a {
@@ -221,10 +226,30 @@ section#about p{
     margin-top: 0;
 }
 
-div.back-about {
+div.back {
     position: fixed;
-    font-size: 120px;
+    font-size: 80px;
     font-weight: 900;
+}
+
+div.back::before {
+    content: " ";
+    position: absolute;
+    background: white;
+    z-index: -1;
+    box-shadow: var(--shadow);
+}
+
+div.back:hover::before {
+    background: var(--yellow);
+}
+
+div.back a {
+    color: black;
+    text-decoration: none;
+}
+
+div.back-about {
     bottom: 0;
     right: 0.2em;
     transition: transform 1s ease-in-out;
@@ -232,22 +257,10 @@ div.back-about {
 }
 
 div.back-about::before {
-    content: " ";
-    position: absolute;
     left: -0.2em;
     bottom: 0.2em;
     top: 0.6em;
     right: 0.2em;
-    background: white;
-    z-index: -1;
-}
-div.back-about:hover::before {
-    background: var(--yellow);
-}
-
-div.back-about a {
-    color: black;
-    text-decoration: none;
 }
 
 body.about :is(section#about, div.back-about) {
@@ -255,9 +268,6 @@ body.about :is(section#about, div.back-about) {
 }
 
 div.back-blog {
-    position: fixed;
-    font-size: 120px;
-    font-weight: 900;
     bottom: 0;
     right: 0.2em;
     transition: transform 1s ease-in-out;
@@ -265,22 +275,10 @@ div.back-blog {
 }
 
 div.back-blog::before {
-    content: " ";
-    position: absolute;
     left: -0.2em;
     bottom: 0.2em;
     top: 0.6em;
     right: 0.2em;
-    background: white;
-    z-index: -1;
-}
-div.back-blog:hover::before {
-    background: var(--yellow);
-}
-
-div.back-blog a {
-    color: black;
-    text-decoration: none;
 }
 
 body.blog :is(section#blog, div.back-blog) {
@@ -288,9 +286,6 @@ body.blog :is(section#blog, div.back-blog) {
 }
 
 div.back-stuff {
-    position: fixed;
-    font-size: 120px;
-    font-weight: 900;
     bottom: .8em;
     right: 0em;
     transition: transform 1s ease-in-out;
@@ -298,23 +293,10 @@ div.back-stuff {
 }
 
 div.back-stuff::before {
-    content: " ";
-    position: absolute;
     left: -0.2em;
     bottom: 0.5em;
     top: 0.3em;
     right: 0.2em;
-    background: white;
-    z-index: -1;
-}
-
-div.back-stuff:hover::before {
-    background: var(--yellow);
-}
-
-div.back-stuff a {
-    color: black;
-    text-decoration: none;
 }
 
 body.stuff :is(div.back-stuff) {
@@ -322,9 +304,6 @@ body.stuff :is(div.back-stuff) {
 }
 
 div.back-portfolio {
-    position: fixed;
-    font-size: 120px;
-    font-weight: 900;
     bottom: 0.6em;
     right: -.2em;
     transition: transform 1s ease-in-out;
@@ -332,27 +311,36 @@ div.back-portfolio {
 }
 
 div.back-portfolio::before {
-    content: " ";
-    position: absolute;
     left: .3em;
     bottom: 0.2em;
     top: 0.6em;
     right: -.1em;
-    background: white;
-    z-index: -1;
-}
-
-div.back-portfolio:hover::before {
-    background: var(--yellow);
-}
-
-div.back-portfolio a {
-    color: black;
-    text-decoration: none;
 }
 
 body.portfolio :is(div.back-portfolio) {
     transform: translateY(0vw) rotate(90deg);
+}
+
+div.back-blog-post {
+    bottom: 0;
+    right: 0.2em;
+    transition: transform 1s ease-in-out;
+    transform: translateX(-100vw);
+}
+
+div.back-blog-post::before {
+    left: -0.2em;
+    bottom: 0.2em;
+    top: 0.6em;
+    right: 0.2em;
+}
+
+body.blog-post :is(section#blog-post, div.back-blog-post) {
+    transform: translateX(0vw);
+}
+
+body.blog-post :is(section#blog, div.back-blog) {
+    transform: translateX(100vw);
 }
 
 section#blog {
@@ -395,6 +383,7 @@ section#blog > div::after {
     background: white;
     display: block;
     z-index: -1;
+    box-shadow: var(--shadow);
 }
 
 section#blog ol {
@@ -412,6 +401,7 @@ section#blog li span {
     margin-top: 20px;
     background: var(--yellow);
     height: 1.5em;
+    box-shadow: var(--shadow);
 }
 
 section#blog li h2 {
@@ -440,43 +430,6 @@ section#blog a:hover::before {
 
 section#blog p{
     margin-top: 0;
-}
-
-div.back-blog-post {
-    position: fixed;
-    font-size: 120px;
-    font-weight: 900;
-    bottom: 0;
-    right: 0.2em;
-    transition: transform 1s ease-in-out;
-    transform: translateX(-100vw);
-}
-
-div.back-blog-post::before {
-    content: " ";
-    position: absolute;
-    left: -0.2em;
-    bottom: 0.2em;
-    top: 0.6em;
-    right: 0.2em;
-    background: white;
-    z-index: -1;
-}
-div.back-blog-post:hover::before {
-    background: var(--yellow);
-}
-
-div.back-blog-post a {
-    color: black;
-    text-decoration: none;
-}
-
-body.blog-post :is(section#blog-post, div.back-blog-post) {
-    transform: translateX(0vw);
-}
-
-body.blog-post :is(section#blog, div.back-blog) {
-    transform: translateX(100vw);
 }
 
 section#blog-post {
@@ -518,6 +471,7 @@ section#blog-post > div::after {
     background: white;
     display: block;
     z-index: -1;
+    box-shadow: var(--shadow);
 }
 
 section#blog-post header {
@@ -531,6 +485,7 @@ section#blog-post header span {
     background: var(--yellow);
     height: 1.5em;
     margin-left: 1em;
+    box-shadow: var(--shadow);
 }
 
 section#blog-post header h1 {
