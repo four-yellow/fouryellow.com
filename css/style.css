@@ -439,20 +439,21 @@ section#blog-post {
 }
 
 section#blog-post > div {
-    position: absolute;
-    right: 17vw;
-    left: 10vw;
-    top: 10vh;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1080px;
     font-size: 80px;
     padding-bottom: 12vh;
+    padding-top: 1em;
 }
 
 section#blog-post > div::after {
     content: " ";
     position: absolute;
-    left: 4.5em;
-    top: .5em;
-    right: .5em;
+    width: 800px;
+    top: 1.5em;
+    right: 0;
     bottom: 10vh;
     background: white;
     display: block;
@@ -470,7 +471,6 @@ section#blog-post header span {
     font-size: 40px;
     background: var(--yellow);
     height: 1.5em;
-    margin-left: 1em;
     box-shadow: var(--shadow);
 }
 
@@ -480,10 +480,42 @@ section#blog-post header h1 {
     line-height: 1em;
 }
 
-section#blog-post p {
+section#blog-post div > p {
     font-weight: 400;
     font-size: 24px;
-    margin-left: 17em;
+    margin-left: 280px;
     line-height: 1.5em;
-    margin-right: 2em;
+    margin-right: 0;
+    padding-left: 2em;
+}
+
+@media screen and (max-width: 1220px) {
+    section#blog-post > div {
+        width: calc(800px + 1em);
+    }
+    section#blog-post header {
+        flex-direction: column;
+    }
+    section#blog-post header span {
+        align-self: flex-start;
+        margin-left: 1em;
+    }
+    section#blog-post div > p {
+        margin-left: 3.4em;
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    section#blog-post > div {
+        width: auto;
+        margin: 0 0.3em;
+    }
+    section#blog-post > div::after {
+        width: auto;
+        left: 0.6em;
+    }
+    section#blog-post div > p {
+        margin-left: 1.5em;
+    }
 }
