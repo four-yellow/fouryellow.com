@@ -218,37 +218,14 @@ section#about {
 }
 
 section#about > div {
-    position: absolute;
-    left: 40vw;
-    top: 15vh;
     font-size: 50px;
-    width: 12em;
-    padding-left: 1.5em;
-    line-height: 60px;
-    padding-top: 14px;
-    padding-bottom: 10vh;
-}
-
-section#about > div::after {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 10vh;
-    background: white;
-    font-size: 50px;
-    width: 12em;
-    display: block;
-    z-index: -1;
-    box-shadow: var(--shadow);
+    padding-top: 2em;
 }
 
 section#about img {
-    position: absolute;
+    float: left;
     width: 6em;
     height: auto;
-    left: calc(40vw - 5em);
-    top: 5em;
     box-shadow: var(--shadow);
 }
 
@@ -263,6 +240,8 @@ section#about a {
 
 section#about p{
     margin-top: 0;
+    margin-left: 280px;
+    padding-left: 1em;
 }
 
 /**************************************************************
@@ -501,6 +480,13 @@ section#blog-post div > p {
     section#blog-post div > p {
         margin-left: 3.4em;
     }
+    section#about div > p {
+        margin-left: 1em;
+    }
+    section#about div img {
+        margin-right: .5em;
+        margin-bottom: .5em;
+    }
 }
 
 @media screen and (max-width: 950px) {
@@ -524,5 +510,13 @@ section#blog-post div > p {
     }
     section#blog-post div > p {
         margin-left: 1.5em;
+    }
+    section#about div > p {
+        margin-left: 0;
+    }
+    section#about div img {
+        float: none;
+        width: 80%;
+        max-width: 400px;
     }
 }
