@@ -184,6 +184,33 @@ section.page::-webkit-scrollbar {
     display: none;
 }
 
+section.panel > div {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1080px;
+    font-size: 80px;
+    padding-bottom: 12vh;
+    padding-top: 1em;
+}
+
+section.panel > div::after {
+    content: " ";
+    position: absolute;
+    width: 800px;
+    top: 1.5em;
+    right: 0;
+    bottom: 10vh;
+    background: white;
+    display: block;
+    z-index: -1;
+    box-shadow: var(--shadow);
+}
+
+/**************************************************************
+                        ABOUT PAGE
+**************************************************************/
+
 section#about {
     font-size: 50px;
     line-height: 60px;
@@ -237,6 +264,10 @@ section#about a {
 section#about p{
     margin-top: 0;
 }
+
+/**************************************************************
+                        BACK BUTTONS
+**************************************************************/
 
 div.back {
     position: fixed;
@@ -355,6 +386,10 @@ body.blog-post :is(section#blog, div.back-blog) {
     transform: translateX(100vw);
 }
 
+/**************************************************************
+                        BLOG PAGE
+**************************************************************/
+
 section#blog {
     font-size: 80px;
     font-weight: 900;
@@ -362,33 +397,11 @@ section#blog {
     transform: translateX(-100vw);
 }
 
-section#blog > div {
-    position: absolute;
-    right: 17vw;
-    left: 10vw;
-    top: 10vh;
-    font-size: 80px;
-    padding-bottom: 10vh;
-    min-height: 85vh;
-}
-
-section#blog > div::after {
-    content: " ";
-    position: absolute;
-    left: 4.5em;
-    top: .5em;
-    right: .5em;
-    bottom: 10vh;
-    background: white;
-    display: block;
-    z-index: -1;
-    box-shadow: var(--shadow);
-}
-
 section#blog ol {
     font-size: 40px;
     list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 section#blog li {
@@ -431,34 +444,15 @@ section#blog p{
     margin-top: 0;
 }
 
+/**************************************************************
+                        BLOG POST PAGE
+**************************************************************/
+
 section#blog-post {
     font-size: 80px;
     font-weight: 900;
     line-height: 60px;
     transform: translateX(-100vw);
-}
-
-section#blog-post > div {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    width: 1080px;
-    font-size: 80px;
-    padding-bottom: 12vh;
-    padding-top: 1em;
-}
-
-section#blog-post > div::after {
-    content: " ";
-    position: absolute;
-    width: 800px;
-    top: 1.5em;
-    right: 0;
-    bottom: 10vh;
-    background: white;
-    display: block;
-    z-index: -1;
-    box-shadow: var(--shadow);
 }
 
 section#blog-post header {
@@ -489,14 +483,18 @@ section#blog-post div > p {
     padding-left: 2em;
 }
 
+/**************************************************************
+                        BREAKPOINTS
+**************************************************************/
+
 @media screen and (max-width: 1220px) {
-    section#blog-post > div {
+    section.panel > div {
         width: calc(800px + 1em);
     }
-    section#blog-post header {
+    section#blog-post header, section#blog li {
         flex-direction: column;
     }
-    section#blog-post header span {
+    section#blog-post header span, section#blog li span {
         align-self: flex-start;
         margin-left: 1em;
     }
@@ -505,15 +503,24 @@ section#blog-post div > p {
     }
 }
 
-
 @media screen and (max-width: 950px) {
-    section#blog-post > div {
+    section.panel > div {
         width: auto;
         margin: 0 0.3em;
     }
-    section#blog-post > div::after {
+    section.panel > div::after {
         width: auto;
         left: 0.6em;
+    }
+    section#blog-post header {
+        margin-bottom: 0;
+    }
+    section#blog-post header h1, section#blog li h2 {
+        font-size: 60px;
+    }
+    section#blog-post header span, section#blog li span {
+        font-size: 24px;
+        line-height: 2em;
     }
     section#blog-post div > p {
         margin-left: 1.5em;
