@@ -180,6 +180,10 @@ section.page {
     scrollbar-width: none;  /* Firefox */
 }
 
+section.page::-webkit-scrollbar {
+    display: none;
+}
+
 section#about {
     font-size: 50px;
     line-height: 60px;
@@ -358,10 +362,6 @@ section#blog {
     transform: translateX(-100vw);
 }
 
-section#blog::-webkit-scrollbar {
-    display: none;
-}
-
 section#blog > div {
     position: absolute;
     right: 17vw;
@@ -436,10 +436,6 @@ section#blog-post {
     font-weight: 900;
     line-height: 60px;
     transform: translateX(-100vw);
-}
-
-section#blog-post::-webkit-scrollbar {
-    display: none;
 }
 
 section#blog-post > div {
