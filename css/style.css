@@ -165,17 +165,25 @@ body.portfolio :where(.logo, nav) {
     transform: translateY(-100vh);
 }
 
-section#about {
+section.page {
     position: fixed;
-    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
-    right: 0;
-    font-size: 50px;
+    left: 0;
+    font-size: 80px;
+    font-weight: 900;
     line-height: 60px;
     transition: transform 1s ease-in-out;
-    transform: translateX(100vw);
     overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+section#about {
+    font-size: 50px;
+    line-height: 60px;
+    transform: translateX(100vw);
 }
 
 section#about > div {
@@ -344,19 +352,10 @@ body.blog-post :is(section#blog, div.back-blog) {
 }
 
 section#blog {
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
     font-size: 80px;
     font-weight: 900;
     line-height: 60px;
-    transition: transform 1s ease-in-out;
     transform: translateX(-100vw);
-    overflow: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */  
 }
 
 section#blog::-webkit-scrollbar {
@@ -433,19 +432,10 @@ section#blog p{
 }
 
 section#blog-post {
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
     font-size: 80px;
     font-weight: 900;
     line-height: 60px;
-    transition: transform 1s ease-in-out;
     transform: translateX(-100vw);
-    overflow: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */  
 }
 
 section#blog-post::-webkit-scrollbar {
